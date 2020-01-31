@@ -1,0 +1,10 @@
+/nbproject/
+
+/.well-know/
+.htaccess
+
+config.inc.php
+
+/tmp/*
+
+!index.php
