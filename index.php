@@ -6,18 +6,18 @@
  * @author  Manuel Zavatta <manuel.zavatta@gmail.com>
  * @link    https://github.com/Zavy86/Ambrogio
  */
- // load application
- require_once("loader.inc.php");
- // include dashboard class
- require_once(DIR."classes/Dashboard.class.php");
- // acquire variables
- $r_dashboard=$_REQUEST['dashboard'];
- if(!$r_dashboard){$r_dashboard="default";}
- // initialize dashboard
- $dashboard=new Dashboard($r_dashboard);
- // renderize dashboard
- $dashboard->render();
- // debug
- api_dump($dashboard,"Dashboard");
- api_dump($APP,"Ambrogio");
- api_dump($DB,"Database");
+?>
+<html>
+ <head>
+  <title>Ambrogio - Telegram Notification Bot</title>
+  <style>*{font-family:monospace}body{padding-top:32px}</style>
+ </head>
+ <body>
+  <center>
+   <h1>Ambrogio</h1>
+   <img src="styles/logo.png" alt="Logo Ambrogio" width="256">
+   <h2>Telegram Notification Bot</h2>
+   <!--<a href="https://github.com/Zavy86/Ambrogio" target='_blank'>https://github.com/Zavy86/Ambrogio</a>-->
+  </center>
+ </body>
+</html>
