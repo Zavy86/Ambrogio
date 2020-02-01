@@ -47,6 +47,7 @@ require_once(DIR."classes/Application.class.php");
 require_once(DIR."classes/Database.class.php");
 require_once(DIR."classes/Bot.class.php");
 require_once(DIR."classes/Chat.class.php");
+require_once(DIR."classes/Hook.class.php");
 
 // build database
 global $DB;

@@ -28,7 +28,7 @@
  $navbar->addElement("Administration","admin.php?mod=administration");
  $navbar->addElement("Bot","admin.php?mod=bot");
  $navbar->addElement("Chats","admin.php?mod=chats");
- //$navbar->addElement("Hooks","admin.php?mod=hooks");
+ $navbar->addElement("Hooks","admin.php?mod=hooks");
  $navbar->addNav("navbar-right");                                                                                  /** todo right */
  $navbar->addElement(api_icon("lock","Lock"),"admin.php?mod=authentication&scr=submit&act=logout");
  // add navbar to bootstrap
