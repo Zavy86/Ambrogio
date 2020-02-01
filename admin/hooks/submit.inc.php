@@ -81,7 +81,6 @@
   // check authorizations
   api_checkAuthorizations();
   // get objects
-  $bot_obj=new Bot();
   $hook_obj=new Hook($_REQUEST['idHook']);
   api_dump($hook_obj,"hook object");
   // check object
@@ -90,7 +89,7 @@
   // get variables
   $r_message=$_REQUEST['message'];
   // send message
-  if($bot_obj->sendMessage($hook_obj->telegram_id,$r_message)){
+  if($GLOBALS['BOT']->sendMessage($hook_obj->telegram_id,$r_message)){
    // alert and redirect
    api_alert("Notification sended","success");
    api_redirect("admin.php?mod=".MODULE."&scr=".api_return_script("hook_view")."&idHook=".$hook_obj->id);

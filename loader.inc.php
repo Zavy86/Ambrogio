@@ -57,5 +57,9 @@ $DB=new Database($configuration);
 global $APP;
 $APP=new Application($configuration);
 
+// build bot
+global $BOT;
+$BOT=new Bot();
+
 // destroy configuration class
 unset($configuration);

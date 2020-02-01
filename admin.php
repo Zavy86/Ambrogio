@@ -46,5 +46,6 @@
  // renderize bootstrap
  $bootstrap->render();
  // debug
- api_dump($APP,"Ambrogio");
+ api_dump($BOT,"Bot");
+ api_dump($APP,"Application");
  api_dump($DB,"Database");
