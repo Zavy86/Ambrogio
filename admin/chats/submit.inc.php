@@ -81,7 +81,6 @@
   // check authorizations
   api_checkAuthorizations();
   // get objects
-  $bot_obj=new Bot();
   $chat_obj=new Chat($_REQUEST['idChat']);
   api_dump($chat_obj,"chat object");
   // check object
@@ -90,7 +89,7 @@
   // get variables
   $r_message=$_REQUEST['message'];
   // send message
-  if($bot_obj->sendMessage($chat_obj->telegram_id,$r_message)){
+  if($GLOBALS['BOT']->sendMessage($chat_obj->telegram_id,$r_message)){
    // alert and redirect
    api_alert("Notification sended","success");
    api_redirect("admin.php?mod=".MODULE."&scr=".api_return_script("chat_view")."&idChat=".$chat_obj->id);

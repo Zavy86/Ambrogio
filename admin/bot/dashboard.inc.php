@@ -7,25 +7,23 @@
  * @link    https://github.com/Zavy86/Ambrogio
  */
  api_checkAuthorizations();
- // get object
- $bot_obj=new Bot();
 
  // debug
- //api_dump($bot_obj,"Bot");
- //api_dump($bot_obj->setWebhook(),"setWebhook");
- //api_dump($bot_obj->getWebhookInfo(),"getWebhookInfo");
+ //api_dump($BOT,"Bot");
+ //api_dump($BOT->setWebhook(),"setWebhook");
+ //api_dump($BOT->getWebhookInfo(),"getWebhookInfo");
 
  // include template
  require_once("template.inc.php");
  // set title
- $bootstrap->setTitle("Bot ".$bot_obj->title);
+ $bootstrap->setTitle($BOT->title);
  // build description list
  $dl=new strDescriptionList("br","dl-horizontal");
- $dl->addElement("Bot",api_tag("strong",$bot_obj->title));
- $dl->addElement("Link",api_link($bot_obj->link,"@".$bot_obj->username,null,null,false,null,null,null,"_blank"));
- $dl->addElement("Telegram ID",api_tag("samp",$bot_obj->telegram_id));
+ $dl->addElement("Bot",api_tag("strong",$BOT->title));
+ $dl->addElement("Link",api_link($BOT->link,"@".$BOT->username,null,null,false,null,null,null,"_blank"));
+ $dl->addElement("Telegram ID",api_tag("samp",$BOT->telegram_id));
 
- if($bot_obj->getWebhookInfo()->url==$APP->url."hook.php"){
+ if($BOT->getWebhookInfo()->url==$APP->url."hook.php"){
   $dl->addElement("Webhook",api_icon("check"));
  }else{
   $dl->addElement("Webhook",api_icon("remove")."&nbsp;&nbsp;&rarr;&nbsp;&nbsp;".api_link("admin.php?mod=".MODULE."&scr=submit&act=bot_setWebhook","Set Webhook"));

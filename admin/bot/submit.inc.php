@@ -24,11 +24,8 @@
   api_dump($_REQUEST,"_REQUEST");
   // check authorizations
   api_checkAuthorizations();
-  // get objects
-  $bot_obj=new Bot();
-  api_dump($bot_obj,"bot object");
   // set webhook
-  if($bot_obj->setWebhook()){
+  if($GLOBALS['BOT']->setWebhook()){
    api_alert("Webhook setted","success");
   }else{
    api_alert("Error setting webhook","error");
