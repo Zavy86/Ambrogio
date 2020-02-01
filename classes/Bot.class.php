@@ -108,7 +108,7 @@ class Bot{
   $response=json_decode(file_get_contents($url),true);
   // debug
   api_dump($response,"sendMessage response");
-  
+
   // check response
   if(!$response['ok']){return false;}
   // return
