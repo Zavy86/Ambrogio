@@ -30,11 +30,14 @@
  $grid->addRow();
  // renderize description list into grid
  $grid->addCol($dl->render(6),"col-xs-12");
- // add grid separator
- $grid->addSeparator();
- // add grid row
- $grid->addRow();
- // renderize form into grid
- $grid->addCol($form->render(null,6),"col-xs-12");
+ // check for telegram id
+ if($chat_obj->telegram_id){
+  // add grid separator
+  $grid->addSeparator();
+  // add grid row
+  $grid->addRow();
+  // renderize form into grid
+  $grid->addCol($form->render(null,6),"col-xs-12");
+ }
  // renderize grid into bootstrap sections
  $bootstrap->addSection($grid->render(true,3));

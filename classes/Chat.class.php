@@ -23,7 +23,7 @@ class Chat{
   */
  public function __construct($chat){
   // load object
-  if(is_numeric($chat)){$chat=$GLOBALS['DB']->queryUniqueObject("SELECT * FROM `ambrogio__chats` WHERE `id`='".$chat."'");}
+  if(is_numeric($chat)){$chat=$GLOBALS['DB']->queryUniqueObject("SELECT * FROM `ambrogio__chats` WHERE `id`='".$chat."' OR `telegram_id`='".$chat."'");}
   if(is_string($chat)){$chat=$GLOBALS['DB']->queryUniqueObject("SELECT * FROM `ambrogio__chats` WHERE `key`='".$chat."'");}
   if(!$chat->id){return false;}
   // initialize properties
