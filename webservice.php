@@ -13,8 +13,6 @@
  require_once("loader.inc.php");
  // debug request
  api_dump($_REQUEST,"REQUEST");
- // check for actions
- if(!$_REQUEST['act']){die("ERROR EXECUTING WEB SERVICE: The action was not defined");}
  // build return class
  $RESPONSE=new stdClass();
  $RESPONSE->error=false;
