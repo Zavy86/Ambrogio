@@ -8,10 +8,8 @@
  */
  // load application
  require_once("loader.inc.php");
- // get, decode and store for debug content
+ // get and decode content
  $content_raw=file_get_contents("php://input");
- file_put_contents("tmp/debug_".time().".json",json_encode(json_decode($content_raw,true),JSON_PRETTY_PRINT));
- //$content_raw=file_get_contents("tmp/debug.json");
  $content=json_decode($content_raw,true);
  api_dump($content,"content");
  // check for content
