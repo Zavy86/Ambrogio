@@ -16,10 +16,8 @@
  api_dump($content,"content");
  // check for content
  if(!$content['update_id']){exit;}
- // get bot object
- $bot_obj=new Bot();
- api_dump($bot_obj,"bot");
- if(!$bot_obj->telegram_id){exit;}
+ // check for telegram bot id
+ if(!$GLOBALS['BOT']->telegram_id){exit;}
  // build hook query object
  $hook_qobj=new stdClass();
  $hook_qobj->timestamp=$content['message']['date'];
