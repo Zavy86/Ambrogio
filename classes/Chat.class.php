@@ -15,7 +15,7 @@ class Chat{
  /** Properties */
  protected $id;
  protected $key;
- protected $name;
+ protected $title;
  protected $telegram_id;
 
  /**
@@ -29,7 +29,7 @@ class Chat{
   // initialize properties
   $this->id=(int)$chat->id;
   $this->key=stripslashes($chat->key);
-  $this->name=stripslashes($chat->name);
+  $this->title=stripslashes($chat->title);
   $this->telegram_id=$chat->telegram_id;
   // return
   return $this->id;

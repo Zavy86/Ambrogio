@@ -16,7 +16,7 @@
  else{$bootstrap->setTitle("Edit ".$chat_obj->title);}
  // build form
  $form=new strForm("admin.php?mod=".MODULE."&scr=submit&act=chat_save&idChat=".$chat_obj->id."&return_scr=".api_return_script("chat_view"),"POST",null,"chat_edit");
- $form->addField("text","name","Name",$chat_obj->name,"Chat name",null,null,null,"required");
+ $form->addField("text","title","Chat",$chat_obj->title,"Chat title",null,null,null,"required");
  $form->addControl("submit","Submit");
  $form->addControl("button","Cancel","admin.php?mod=".MODULE."&scr=".api_return_script("chat_view")."&idChat=".$chat_obj->id);
  if($chat_obj->id){$form->addControl("button","Remove","admin.php?mod=".MODULE."&scr=submit&act=chat_remove&idChat=".$chat_obj->id,"btn-danger","Are you sure you want to remove definitively this chat?");}

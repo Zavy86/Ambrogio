@@ -22,14 +22,14 @@
  $table->addHeader("&nbsp;");
  // get chats
  $chats_array=array();
- $results=$GLOBALS['DB']->queryObjects("SELECT * FROM `ambrogio__chats` ORDER BY `name` ASC");
+ $results=$GLOBALS['DB']->queryObjects("SELECT * FROM `ambrogio__chats` ORDER BY `title` ASC");
  foreach($results as $result){$chats_array[$result->id]=new Chat($result);}
  // cycle all chats
  foreach($chats_array as $chat_fobj){
   // add table datas
   $table->addRow();
   $table->addRowFieldAction("admin.php?mod=chats&scr=chat_view&idChat=".$chat_fobj->id,api_icon("search","View chat"));
-  $table->addRowField($chat_fobj->name);
+  $table->addRowField($chat_fobj->title);
   $table->addRowField(api_tag("samp",$chat_fobj->key),"nowrap text-right");
   if($chat_fobj->telegram_id){$table->addRowField(api_icon("check"));}else{$table->addRowField(api_icon("remove"));}
  }

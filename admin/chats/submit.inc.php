@@ -32,7 +32,7 @@
   // build query object
   $chat_qobj=new stdClass();
   $chat_qobj->id=$chat_obj->id;
-  $chat_qobj->name=addslashes($_REQUEST['name']);
+  $chat_qobj->title=addslashes($_REQUEST['title']);
   // debug
   api_dump($chat_qobj,"chat query object");
   // check object

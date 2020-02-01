@@ -13,10 +13,10 @@
  // include template
  require_once("template.inc.php");
  // set title
- $bootstrap->setTitle("Chat ".$chat_obj->name);
+ $bootstrap->setTitle("Chat ".$chat_obj->title);
  // build description list
  $dl=new strDescriptionList("br","dl-horizontal");
- $dl->addElement("Chat",api_tag("strong",$chat_obj->name));
+ $dl->addElement("Chat",api_tag("strong",$chat_obj->title));
  $dl->addElement("Key",api_tag("samp",$chat_obj->key));
  $dl->addElement("Telegram ID",($chat_obj->telegram_id?strtoupper($chat_obj->telegram_id):api_tag("em","Unbinded")));
  // build form
