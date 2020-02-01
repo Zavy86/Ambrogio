@@ -1,0 +1,1 @@
+<?php api_redirect($APP->path."admin.php?mod=chats&scr=chat_list"); ?>
