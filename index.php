@@ -7,9 +7,12 @@
  * @link    https://github.com/Zavy86/Ambrogio
  */
 ?>
+<!DOCTYPE html>
 <html>
  <head>
   <title>Ambrogio - Telegram Notification Bot</title>
+  <link type="image/png" rel="icon" href="styles/favicon.png" sizes="any"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
   <style>*{font-family:monospace}body{padding-top:32px}</style>
  </head>
  <body>
