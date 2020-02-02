@@ -18,11 +18,11 @@ SET FOREIGN_KEY_CHECKS = 0;
 
 CREATE TABLE IF NOT EXISTS `ambrogio__chats` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `key` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
+  `token` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
   `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `telegram_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `key` (`key`)
+  UNIQUE KEY `token` (`token`),
   KEY `telegram_id` (`telegram_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 

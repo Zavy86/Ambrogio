@@ -17,8 +17,9 @@
  // build description list
  $dl=new strDescriptionList("br","dl-horizontal");
  $dl->addElement("Chat",api_tag("strong",$chat_obj->title));
- $dl->addElement("Key",api_tag("samp",$chat_obj->key));
+ $dl->addElement("Token",api_tag("samp",$chat_obj->token));
  $dl->addElement("Telegram ID",($chat_obj->telegram_id?strtoupper($chat_obj->telegram_id):api_tag("em","Unbinded")));
+ $dl->addElement("Web Service",api_tag("samp",$APP->url."webservice.php<br>?token=".$chat_obj->token."<br>&act=message<br>&message=Hello%20World!"));
  // build form
  $form=new strForm("admin.php?mod=".MODULE."&scr=submit&act=chat_notification&idChat=".$chat_obj->id."&return_scr=".api_return_script("chat_view"),"POST",null,"chat_edit");
  $form->addField("textarea","message","Notification",null,"Notification message for this chat",null,null,null,"required rows=9");

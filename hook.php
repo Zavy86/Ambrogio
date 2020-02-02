@@ -35,12 +35,12 @@
   // check for start command
   if(substr(strtolower($content['message']['text']),0,6)=="/start"){
    // welcome message
-   $response="Welcome ".$content['message']['from']['first_name'].", please enter your registration key:";
+   $response="Welcome ".$content['message']['from']['first_name'].", please enter your registration token:";
   }else{
-   // check for key
+   // check for token
    if(strlen($content['message']['text'])!=32){
-    // key error
-    $response="Sorry, the registration key is a 32 character string..";
+    // token error
+    $response="Sorry, the registration token is a 32 character string..";
    }else{
     // get chat object
     $chat_obj=new Chat($content['message']['text']);
@@ -53,7 +53,7 @@
      // check for binded chat
      if($chat_obj->telegram_id){
       // chat already binded
-      $response="Sorry, this registration key is already binded to another account..";
+      $response="Sorry, this registration token is already binded to another account..";
      }else{
       // chat found and bindable
       $response="Ok, your account was succesfully binded!";
@@ -73,7 +73,8 @@
   }
  }else{
   // binded chat
-  $response="ciao ciao ciao";
+  //$response="ciao ciao ciao";
+  exit;
   // @todo parse commands
  }
  // make response parameter
