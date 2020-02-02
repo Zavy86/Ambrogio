@@ -43,7 +43,7 @@
    api_alert("Chat updated","success");
   }else{
    // insert
-   $chat_qobj->key=api_random(32);
+   $chat_qobj->token=api_random(32);
    $chat_qobj->id=$GLOBALS['DB']->queryInsert("ambrogio__chats",$chat_qobj);
    // alert
    api_alert("Chat created","success");

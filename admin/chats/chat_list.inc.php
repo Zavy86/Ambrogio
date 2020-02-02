@@ -18,7 +18,7 @@
  // add table headers
  $table->addHeader("&nbsp;");
  $table->addHeader("Chat",null,"100%");
- $table->addHeader("Key","nowrap text-right");
+ $table->addHeader("Token","nowrap text-right");
  $table->addHeader("&nbsp;");
  // get chats
  $chats_array=array();
@@ -30,7 +30,7 @@
   $table->addRow();
   $table->addRowFieldAction("admin.php?mod=chats&scr=chat_view&idChat=".$chat_fobj->id,api_icon("search","View chat"));
   $table->addRowField($chat_fobj->title);
-  $table->addRowField(api_tag("samp",$chat_fobj->key),"nowrap text-right");
+  $table->addRowField(api_tag("samp",$chat_fobj->token),"nowrap text-right");
   if($chat_fobj->telegram_id){$table->addRowField(api_icon("check"));}else{$table->addRowField(api_icon("remove"));}
  }
  // build grid
