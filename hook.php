@@ -12,6 +12,7 @@
  $content_raw=file_get_contents("php://input");
  $content=json_decode($content_raw,true);
  api_dump($content,"content");
+ //file_put_contents("tmp/hook.log",json_encode($content,JSON_PRETTY_PRINT));
  // check for content
  if(!$content['update_id']){exit;}
  // check for telegram bot id
@@ -22,6 +23,7 @@
  $hook_qobj->chat_id=$content['message']['chat']['id'];
  $hook_qobj->chat_title=$content['message']['chat']['title'];
  $hook_qobj->username=$content['message']['from']['username'];
+ $hook_qobj->fullname=$content['message']['from']['first_name']." ".$content['message']['from']['last_name'];
  $hook_qobj->request=json_encode($content,JSON_PRETTY_PRINT);
  // debug
  api_dump($hook_qobj,"chat query object");
