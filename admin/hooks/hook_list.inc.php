@@ -18,7 +18,7 @@
  // add table headers
  $table->addHeader("&nbsp;");
  $table->addHeader("Timestamp","nowrap");
- $table->addHeader("Username","nowrap");
+ $table->addHeader("Fullname","nowrap");
  $table->addHeader("Request",null,"100%");
  $table->addHeader("Channel","nowrap text-right");
  // get hooks
@@ -31,7 +31,7 @@
   $table->addRow();
   $table->addRowFieldAction("admin.php?mod=hooks&scr=hook_view&idHook=".$hook_fobj->id,api_icon("search","View hook"));
   $table->addRowField(api_timestamp_format($hook_fobj->timestamp),"nowrap");
-  $table->addRowField($hook_fobj->username,"nowrap");
+  $table->addRowField($hook_fobj->fullname,"nowrap");
   $table->addRowField(substr($hook_fobj->request['message']['text'],0,256));
   $table->addRowField(($hook_fobj->chat_title?$hook_fobj->chat_title:"Private"),"nowrap text-right");
  }

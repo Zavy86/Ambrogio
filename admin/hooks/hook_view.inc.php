@@ -17,7 +17,8 @@
  // build description list
  $dl=new strDescriptionList("br","dl-horizontal");
  $dl->addElement("Timestamp",api_timestamp_format($hook_obj->timestamp));
- $dl->addElement("Username",api_link("https://t.me/".$hook_obj->username,"@".$hook_obj->username,null,null,false,null,null,null,"_blank"));
+ if($hook_obj->username){$dl->addElement("Username",api_link("https://t.me/".$hook_obj->username,"@".$hook_obj->username,null,null,false,null,null,null,"_blank"));}
+ $dl->addElement("Fullname",$hook_obj->fullname);
  $dl->addElement("Channel",($hook_obj->chat_title?$hook_obj->chat_title:"Private"));
  $dl->addElement("Request","<pre>".print_r($hook_obj->request,true)."</pre>");
  $dl->addElement("Response","<pre>".print_r($hook_obj->response,true)."</pre>");

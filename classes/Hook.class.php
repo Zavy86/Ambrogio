@@ -18,6 +18,7 @@ class Hook{
  protected $chat_id;
  protected $chat_title;
  protected $username;
+ protected $fullname;
  protected $request;
  protected $response;
 
@@ -34,6 +35,7 @@ class Hook{
   $this->chat_id=$hook->chat_id;
   $this->chat_title=stripslashes($hook->chat_title);
   $this->username=stripslashes($hook->username);
+  $this->fullname=stripslashes($hook->fullname);
   $this->request=json_decode($hook->request,true);
   $this->response=json_decode($hook->response,true);
   // return
