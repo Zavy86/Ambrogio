@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS `ambrogio__chats` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `token` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
   `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `telegram_id` int(11) DEFAULT NULL,
+  `telegram_id` double DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `token` (`token`),
   KEY `telegram_id` (`telegram_id`)
@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `ambrogio__chats` (
 CREATE TABLE IF NOT EXISTS `ambrogio__hooks` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `timestamp` int(11) NOT NULL,
-  `chat_id` int(11) NOT NULL,
+  `chat_id` double NOT NULL,
   `chat_title` varchar(32) COLLATE utf8_unicode_ci DEFAULT NULL,
   `username` varchar(32) COLLATE utf8_unicode_ci DEFAULT NULL,
   `fullname` varchar(128) COLLATE utf8_unicode_ci DEFAULT NULL,
