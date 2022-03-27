@@ -41,8 +41,6 @@ class Bot{
   $this->username=$response['result']['username'];
   $this->link="https://t.me/".$this->username;
   //api_dump($this);
-  // return
-  return $this->id;
  }
 
  /**

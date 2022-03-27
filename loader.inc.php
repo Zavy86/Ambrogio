@@ -12,9 +12,10 @@ require_once("functions.inc.php");
 
 // initialize session
 api_session_start();
+$debug=false;
 
 // check debug from session
-if($_SESSION['ambrogio']['debug']){$debug=true;}
+if(isset($_SESSION['ambrogio']['debug']) && $_SESSION['ambrogio']['debug']){$debug=true;}
 
 // check debug from requests
 if(isset($_GET['debug'])){

@@ -14,7 +14,7 @@
  api_dump($content,"content");
  //file_put_contents("tmp/hook.log",json_encode($content,JSON_PRETTY_PRINT));
  // check for content
- if(!$content['update_id']){exit;}
+ if(!isset($content['update_id']) || !$content['update_id']){exit;}
  // check for telegram bot id
  if(!$GLOBALS['BOT']->telegram_id){exit;}
  // build hook query object
@@ -96,4 +96,3 @@
   header("Content-Type: application/json");
   echo json_encode($parameters);
  }
-?>

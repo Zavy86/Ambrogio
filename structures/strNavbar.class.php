@@ -55,7 +55,7 @@ class strNavbar{
   */
  public function addNav($class=null){
   $nav=new stdClass();
-  $nav->class=$class;
+  $nav->class=strval($class);
   $nav->elements_array=array();
   // add nav to navbar
   $this->current_nav++;
@@ -78,7 +78,7 @@ class strNavbar{
   $element->label=$label;
   $element->url=$url;
   $element->enabled=$enabled;
-  $element->class=$class;
+  $element->class=strval($class);
   $element->style=$style;
   $element->tags=$tags;
   $element->target=$target;
@@ -109,7 +109,7 @@ class strNavbar{
   $subElement->url=$url;
   $subElement->urlParsed=api_parse_url($url);
   $subElement->enabled=$enabled;
-  $subElement->class=$class;
+  $subElement->class=strval($class);
   $subElement->style=$style;
   $subElement->tags=$tags;
   $subElement->target=$target;
@@ -129,7 +129,7 @@ class strNavbar{
   $subSeparator=new stdClass();
   $subSeparator->typology="separator";
   $subSeparator->enabled=true;
-  $subSeparator->class=$class;
+  $subSeparator->class=strval($class);
   // add sub element to element
   $this->navs_array[$this->current_nav]->elements_array[$this->current_element]->subElements_array[]=$subSeparator;
   return true;
@@ -148,7 +148,7 @@ class strNavbar{
   $subHeader->typology="header";
   $subHeader->label=$label;
   $subHeader->enabled=true;
-  $subHeader->class=$class;
+  $subHeader->class=strval($class);
   // add sub element to element
   $this->navs_array[$this->current_nav]->elements_array[$this->current_element]->subElements_array[]=$subHeader;
   return true;

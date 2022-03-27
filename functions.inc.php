@@ -14,7 +14,7 @@ function api_session_start(){
  // start php session
  session_start();
  // check for application session array
- if(!is_array($_SESSION['ambrogio'])){
+ if(!isset($_SESSION['ambrogio']) || !is_array($_SESSION['ambrogio'])){
   $_SESSION['ambrogio']=array();
   $_SESSION['ambrogio']['authenticated']=false;
  }

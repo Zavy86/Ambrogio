@@ -5,23 +5,27 @@
  * @package Ambrogio
  * @author  Manuel Zavatta <manuel.zavatta@gmail.com>
  * @link    https://github.com/Zavy86/Ambrogio
+ *
+ * @var Application $APP
+ * @var Database $DB
+ * @var Bot $BOT
  */
  // load application
  require_once("loader.inc.php");
  // include bootstrap structures
  require_once($APP->dir."structures/strBootstrap.class.php");
  // acquire variables
- $r_script=$_REQUEST['scr'];
- $r_module=$_REQUEST['mod'];
- $r_action=$_REQUEST['act'];
+ $r_module=$_REQUEST['mod']??'administration';
+ $r_script=$_REQUEST['scr']??'dashboard';
+ $r_action=$_REQUEST['act']??null;
  // module, script ad action definitions
- if($r_module){define(MODULE,$r_module);}else{define(MODULE,"administration");}
- if($r_script){define(SCRIPT,$r_script);}else{define(SCRIPT,"dashboard");}
- if($r_action){define(ACTION,$r_action);}else{define(ACTION,null);}
+ define('MODULE',$r_module);
+ define('SCRIPT',$r_script);
+ define('ACTION',$r_action);
  // globals variables
  global $bootstrap;
  // build bootstrap structure
- $bootstrap=new strBootstrap($APP->path);
+ $bootstrap=new strBootstrap();
  // build navbar
  $navbar=new strNavbar("Ambrogio");
  $navbar->addNav();

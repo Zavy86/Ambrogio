@@ -141,7 +141,7 @@ class strForm{
   * @return boolean
   */
  public function addFieldAddonButton($url,$label,$class=null,$style=null,$tags=null,$enabled=true){
-  if($this->fields_array[$this->current_field]->addon_button->url){return false;}
+  if(isset($this->fields_array[$this->current_field]->addon_button->url)){return false;}
   if(!$url || !$label){return false;}
   // build button object
   $button=new stdClass();
@@ -234,6 +234,7 @@ class strForm{
   if(!is_integer($indentations)){return false;}
   // definitions
   $return=null;
+	$split_identation="";
   // make ident spaces
   $ind=str_repeat(" ",$indentations);
   // renderize form
@@ -416,7 +417,7 @@ class strForm{
    $return.=$ind." </div><!-- /form-splitted row -->\n";
   }
   // form controls
-  if(count($this->controls_array)){
+  if(isset($this->controls_array) && count($this->controls_array)){
    $return.=$ind.$split_identation." <div class=\"form-group\" id=\"".$this->id."_controls_form_group\">\n";
    $return.=$ind.$split_identation."  <div class=\"col-sm-offset-".(2+$scaleFactor)." col-sm-".(10-$scaleFactor)."\">\n";
    // cycle all controls

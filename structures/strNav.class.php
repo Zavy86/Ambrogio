@@ -171,7 +171,7 @@ class strNav{
   foreach($this->items_array as $item){
    // check for active
    $active=false;
-   if(/*$item->urlParsed->query_array['mod']==MODULE && */$item->urlParsed->query_array['scr']==$_REQUEST['scr']){$active=true;}
+   if(isset($item->urlParsed->query_array['scr']) && $item->urlParsed->query_array['scr']==$_REQUEST['scr']){$active=true;}
    if(is_int(strpos($this->class,"nav-pills")) && defined('TAB') && $item->urlParsed->query_array['tab']!=TAB){$active=false;}
    if(count($item->subItems_array)){
     foreach($item->subItems_array as $subItem){
